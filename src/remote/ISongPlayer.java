@@ -1,5 +1,17 @@
 package remote;
 
-public class ISongPlayer {
+public interface ISongPlayer {
+	
+	public boolean playSong();
+	
+	public void pauseSong();
+	
+	public void resumeSong();
+	
+	public void stopSong();
+	
+	public void setSong(Song song);
+	
+	public Song getSong();
 
 }
