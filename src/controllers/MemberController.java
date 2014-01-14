@@ -6,5 +6,9 @@ public class MemberController extends ConexionController{
 		super(name);
 	}
 
+	public boolean signIn(String user, String pass) {
+		return reServer.sigIn(user, pass);
+	}
+
 	
 }

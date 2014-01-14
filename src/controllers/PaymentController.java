@@ -7,4 +7,8 @@ public class PaymentController extends ConexionController{
 	
 	}
 
+	public double checkAmount() {
+		return reServer.currentAmount();
+	}
+
 }
