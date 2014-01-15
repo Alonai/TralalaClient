@@ -4,6 +4,7 @@ import remote.SongPlayer;
 import controllers.MemberController;
 import controllers.PaymentController;
 import controllers.SongController;
+import data.Member;
 import data.Song;
 
 public class TralalaClient {
@@ -19,8 +20,8 @@ public class TralalaClient {
 		songController.askSong(name);
 	}
 	
-	public void checkAmount() {
-		paymentController.checkAmount();
+	public void checkAmount(Member m) {
+		paymentController.checkAmount(m);
 	}
 	
 	public void signIn(String user, String pass) {
@@ -28,14 +29,9 @@ public class TralalaClient {
 	}
 
 	public void playSong(Song song) {
-		if (songPlayer != null) {
 			songPlayer.stopSong();
 			songPlayer.setSong(song);
 			songPlayer.playSong();
-		} else {
-			songPlayer = new SongPlayer(song);
-			songPlayer.playSong();
-		}
 	}
 
 	public void pauseSong() {

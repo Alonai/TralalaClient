@@ -14,12 +14,12 @@ public class SongPlayer {
 	private SongDTO bufferedSong;
 	public boolean paused;
 	
-	public SongPlayer(SongController con) {
-		this.controller = con;
+	public SongPlayer(SongController song2) {
+		this.controller = song2;
 	}
 	
 	public void playSong() {
-		System.out.println("Now Playing: " + song.name);
+		System.out.println("Now Playing: " + song.getTitle());
 	}
 	
 	public void pauseSong() {
