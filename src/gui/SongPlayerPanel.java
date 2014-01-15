@@ -33,9 +33,10 @@ public class SongPlayerPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				/* TODO Ask model for the play method and display the song that is being played*/
-				Song song = SongPlayerPanel.this.parent.client.askSong("THE BEAUTIFUL SONG TITLE");
+				SongDTO song = SongPlayerPanel.this.parent.client.askSong("THE BEAUTIFUL SONG TITLE");
 				SongPlayerPanel.this.parent.client.playSong(song);
-				JOptionPane.showMessageDialog(SongPlayerPanel.this, song.getTitle() + " is being played.", "Player Notification", JOptionPane.OK_OPTION);
+				JOptionPane.showMessageDialog(SongPlayerPanel.this,song.getArtistName() + " - " + song.getTitle() + " is being played.", 
+						"Player Notification", JOptionPane.OK_OPTION);
 			}
 		});
 	}

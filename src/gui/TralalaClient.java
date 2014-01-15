@@ -6,6 +6,7 @@ import controllers.PaymentController;
 import controllers.SongController;
 import data.Member;
 import data.Song;
+import data.dto.SongDTO;
 
 public class TralalaClient {
 	private SongController songController;
@@ -27,8 +28,8 @@ public class TralalaClient {
 	public void retreiveSong() {
 	}
 	
-	public void askSong(String name) {
-		songController.askSong(name);
+	public SongDTO askSong(String name) {
+		return songController.askSong(name);
 	}
 	
 	public void checkAmount(Member m) {
