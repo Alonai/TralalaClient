@@ -7,7 +7,7 @@ import controllers.MemberController;
 import controllers.PaymentController;
 import controllers.SongController;
 import data.Member;
-import data.SongDTO;
+import data.dto.SongDTO;
 
 public class TralalaClient {
 	private SongController songController;
