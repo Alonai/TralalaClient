@@ -4,6 +4,7 @@ import remote.SongPlayer;
 import controllers.MemberController;
 import controllers.PaymentController;
 import controllers.SongController;
+import data.Member;
 import data.Song;
 
 public class TralalaClient {
@@ -12,6 +13,17 @@ public class TralalaClient {
 	private MemberController memberController;
 	private SongPlayer songPlayer;
 	
+	public TralalaClient(String name) {
+		try {
+			songController  = new SongController(name);
+			paymentController = new PaymentController(name);
+			memberController = new MemberController(name);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void retreiveSong() {
 	}
 	
@@ -19,12 +31,12 @@ public class TralalaClient {
 		songController.askSong(name);
 	}
 	
-	public void checkAmount() {
-		paymentController.checkAmount();
+	public void checkAmount(Member m) {
+		paymentController.checkAmount(m);
 	}
 	
-	public void signIn(String user, String pass) {
-		memberController.signIn(user, pass);
+	public boolean signIn(String user, String pass) {
+		return memberController.signIn(user, pass);
 	}
 
 	public void playSong(Song song) {
@@ -33,7 +45,8 @@ public class TralalaClient {
 			songPlayer.setSong(song);
 			songPlayer.playSong();
 		} else {
-			songPlayer = new SongPlayer(song);
+			songPlayer = new SongPlayer(songController);
+			songPlayer.setSong(song);
 			songPlayer.playSong();
 		}
 	}

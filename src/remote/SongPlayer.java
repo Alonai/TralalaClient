@@ -19,7 +19,7 @@ public class SongPlayer {
 	}
 	
 	public void playSong() {
-		System.out.println("Now Playing: " + song.name);
+		System.out.println("Now Playing: " + song.getTitle());
 	}
 	
 	public void pauseSong() {
