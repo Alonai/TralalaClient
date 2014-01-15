@@ -1,5 +1,7 @@
 package gui;
 
+import java.util.ArrayList;
+
 import remote.SongPlayer;
 import controllers.MemberController;
 import controllers.PaymentController;
@@ -25,7 +27,8 @@ public class TralalaClient {
 		}
 	}
 	
-	public void retreiveSong() {
+	public ArrayList<String> retreiveSongs() {
+		return songController.getListSongs();
 	}
 	
 	public SongDTO askSong(String name) {
@@ -40,18 +43,10 @@ public class TralalaClient {
 		return memberController.signIn(user, pass);
 	}
 
-	public void playSong(Song song) {
+	public void playSong(SongDTO song) {
 			songPlayer.stopSong();
 			songPlayer.setSong(song);
 			songPlayer.playSong();
-<<<<<<< HEAD
-=======
-		} else {
-			songPlayer = new SongPlayer(songController);
-			songPlayer.setSong(song);
-			songPlayer.playSong();
-		}
->>>>>>> 8f6483aed34d6b5815c326cc45f8180e88959629
 	}
 
 	public void pauseSong() {

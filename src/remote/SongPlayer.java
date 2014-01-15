@@ -7,11 +7,10 @@ import data.Song;
 import data.dto.SongDTO;
 
 public class SongPlayer {
-	private Song song;
 	private SongController controller;
 	private long secPaused;
 	private ArrayList<String> list;
-	private SongDTO bufferedSong;
+	private SongDTO song;
 	public boolean paused;
 	
 	public SongPlayer(SongController song2) {
@@ -37,11 +36,11 @@ public class SongPlayer {
 		secPaused = 0;
 	}
 	
-	public void setSong(Song song) {
+	public void setSong(SongDTO song) {
 		this.song = song;
 	}
 	
-	public Song getSong() {
+	public SongDTO getSong() {
 		return song;
 	}
 	
@@ -50,7 +49,7 @@ public class SongPlayer {
 	}
 	
 	public void downloadSong(String name) {
-		this.bufferedSong = controller.askSong(name);
+		this.song = controller.askSong(name);
 	}
 
 }
