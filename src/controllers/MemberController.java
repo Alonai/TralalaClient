@@ -1,5 +1,7 @@
 package controllers;
 
+import remote.ManagementSessionFacade;
+
 public class MemberController extends ConexionController{
 
 	public MemberController(String name) throws Exception {
@@ -7,7 +9,7 @@ public class MemberController extends ConexionController{
 	}
 
 	public boolean signIn(String user, String pass) {
-		return reServer.sigIn(user, pass);
+		return ((ManagementSessionFacade) reServer).signIn(user, pass);
 	}
 
 	

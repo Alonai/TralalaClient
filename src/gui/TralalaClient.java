@@ -4,6 +4,7 @@ import remote.SongPlayer;
 import controllers.MemberController;
 import controllers.PaymentController;
 import controllers.SongController;
+import data.Song;
 
 public class TralalaClient {
 	private SongController songController;

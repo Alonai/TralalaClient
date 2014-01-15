@@ -1,5 +1,7 @@
 package remote;
 
+import data.Song;
+
 public interface ISongPlayer {
 	
 	public boolean playSong();

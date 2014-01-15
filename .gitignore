@@ -14,7 +14,7 @@
 .mtj.tmp/
 
 # Package Files #
-*.jar
+
 *.war
 >>>>>>> 174981a5029e2b753a50430931bb5c29510856bf
 *.ear
