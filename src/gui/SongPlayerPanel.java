@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import data.dto.SongDTO;
+import data.SongDTO;
 
 
 @SuppressWarnings("serial")
