@@ -6,7 +6,7 @@
 	<property name="lib.dir" location="lib"/>
 	<property name="server.port" value="1099"/> 
 	<property name="server.IP" value="127.0.0.1"/> 
-	<property name="server.Name" value="TralalaClient"/>
+	<property name="server.Name" value="TralalaServer"/>
 	<property name="policy.file" location="security/java.policy"/>	
 
     <path id="classpath">

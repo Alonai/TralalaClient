@@ -5,29 +5,34 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-public class SongPlayerGUI {
-	
-	private JFrame frame;
-	private String title = "SongPlayerGUI";
+public class SongPlayerGUI extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int width = 800;
 	private int height = 600;
 	private int deviceWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	private int deviceHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 	
-	public SongPlayerGUI() {
-		frame = new JFrame(title);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setPreferredSize(new Dimension(width, height));
-		frame.setLayout(null);
-		frame.add(new LoginPanel(frame));
-		frame.pack();
-		frame.setLocation(deviceWidth / 2 - frame.getWidth() / 2, deviceHeight / 2 - frame.getHeight() / 2);
-		frame.setResizable(false);
-		frame.setVisible(true);
+	protected TralalaClient client;
+	
+	public SongPlayerGUI(String name) {
+		super("Tralala Cient");
+		client = new TralalaClient(name);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.getContentPane().setPreferredSize(new Dimension(width, height));
+		this.setLayout(null);
+		this.add(new LoginPanel(this));
+		this.pack();
+		this.setLocation(deviceWidth / 2 - this.getWidth() / 2, deviceHeight / 2 - this.getHeight() / 2);
+		this.setResizable(false);
+		this.setVisible(true);
 	}
 	
-	public static void main(String[] argv) {
-		new SongPlayerGUI();
+	public TralalaClient getClient() {
+		return client;
 	}
+	
 }

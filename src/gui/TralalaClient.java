@@ -13,6 +13,17 @@ public class TralalaClient {
 	private MemberController memberController;
 	private SongPlayer songPlayer;
 	
+	public TralalaClient(String name) {
+		try {
+			songController  = new SongController(name);
+			paymentController = new PaymentController(name);
+			memberController = new MemberController(name);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void retreiveSong() {
 	}
 	
@@ -24,14 +35,22 @@ public class TralalaClient {
 		paymentController.checkAmount(m);
 	}
 	
-	public void signIn(String user, String pass) {
-		memberController.signIn(user, pass);
+	public boolean signIn(String user, String pass) {
+		return memberController.signIn(user, pass);
 	}
 
 	public void playSong(Song song) {
 			songPlayer.stopSong();
 			songPlayer.setSong(song);
 			songPlayer.playSong();
+<<<<<<< HEAD
+=======
+		} else {
+			songPlayer = new SongPlayer(songController);
+			songPlayer.setSong(song);
+			songPlayer.playSong();
+		}
+>>>>>>> 8f6483aed34d6b5815c326cc45f8180e88959629
 	}
 
 	public void pauseSong() {
