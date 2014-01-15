@@ -13,5 +13,9 @@ public interface ISongPlayer {
 	public void setSong(Song song);
 	
 	public Song getSong();
+	
+	public void getListSongs();
+	
+	public void downloadSong(String name);
 
 }

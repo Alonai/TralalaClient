@@ -1,12 +1,19 @@
 package remote;
 
+import java.util.ArrayList;
+
+import controllers.SongController;
+
 public class SongPlayer {
 	private Song song;
+	private SongController controller;
 	private long secPaused;
+	private ArrayList<String> list;
+	private SongDTO bufferedSong;
 	public boolean paused;
 	
-	public SongPlayer(Song song) {
-		this.song = song;
+	public SongPlayer(SongController con) {
+		this.controller = con;
 	}
 	
 	public void playSong() {
@@ -34,6 +41,14 @@ public class SongPlayer {
 	
 	public Song getSong() {
 		return song;
+	}
+	
+	public void getListSongs() {
+		this.list = controller.getListSongs();
+	}
+	
+	public void downloadSong(String name) {
+		this.bufferedSong = controller.askSong(name);
 	}
 
 }
