@@ -34,7 +34,7 @@ public class SongPlayerPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				/* TODO Ask model for the play method and display the song that is being played*/
 				ArrayList<String> songList = SongPlayerPanel.this.parent.client.retreiveSongs();
-				SongDTO song = SongPlayerPanel.this.parent.client.askSong(songList.get(0).split(" ")[0]);
+				SongDTO song = SongPlayerPanel.this.parent.client.askSong(songList.get(0).split(" ")[4]);
 				SongPlayerPanel.this.parent.client.playSong(song);
 				JOptionPane.showMessageDialog(SongPlayerPanel.this, song.getArtistName() + " - " + song.getTitle() + " is being played.", 
 						"Player Notification", JOptionPane.OK_OPTION);
