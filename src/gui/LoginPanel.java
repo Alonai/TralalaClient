@@ -70,11 +70,13 @@ public class LoginPanel extends JPanel {
 				if(LoginPanel.this.parent.getClient().signIn(usernametf.getText(), passwordpf.getText())) {
 					LoginPanel.this.parent.remove(LoginPanel.this);
 					LoginPanel.this.setVisible(false);
-					LoginPanel.this.parent.getContentPane().add(new SongPlayerPanel());
+					LoginPanel.this.parent.getContentPane().add(new SongPlayerPanel(LoginPanel.this.parent));
 					LoginPanel.this.parent.repaint();
 					LoginPanel.this.invalidate();
 				} else {
 					/* TODO if access is denied shows a dialog with an error*/
+					usernametf.setText("");
+					passwordpf.setText("");
 					JOptionPane.showMessageDialog(LoginPanel.this, "The username or the password is incorrect.", "Access denied", JOptionPane.ERROR_MESSAGE);
 				}
 			}
