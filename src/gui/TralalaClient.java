@@ -15,11 +15,11 @@ public class TralalaClient {
 	private MemberController memberController;
 	private SongPlayer songPlayer;
 	
-	public TralalaClient(String name) {
+	public TralalaClient(String songContName, String paymentContName, String memberContName) {
 		try {
-			songController  = new SongController(name);
-			paymentController = new PaymentController(name);
-			memberController = new MemberController(name);
+			songController  = new SongController(songContName);
+			paymentController = new PaymentController(paymentContName);
+			memberController = new MemberController(memberContName);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

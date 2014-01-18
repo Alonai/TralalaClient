@@ -18,9 +18,9 @@ public class SongPlayerGUI extends JFrame {
 	
 	protected TralalaClient client;
 	
-	public SongPlayerGUI(String name) {
+	public SongPlayerGUI(String songContName, String paymentContName, String memberContName) {
 		super("Tralala Cient");
-		client = new TralalaClient(name);
+		client = new TralalaClient(songContName, paymentContName, memberContName);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.getContentPane().setPreferredSize(new Dimension(width, height));
 		this.setLayout(null);
