@@ -48,8 +48,8 @@ public class SongPlayer {
 		this.list = controller.getListSongs();
 	}
 	
-	public void downloadSong(String name) {
-		this.song = controller.askSong(name);
+	public void downloadSong(String name, String nick) {
+		this.song = controller.askSong(name, nick);
 	}
 
 }
