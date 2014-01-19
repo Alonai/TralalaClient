@@ -15,7 +15,7 @@ public class PaymentController extends ConexionController{
 	
 	}
 
-	public double checkAmount(Member m) {
+	public double checkAmount(String m) {
 		return reServer.currentAmount(m);
 	}
 
