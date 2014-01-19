@@ -1,25 +1,22 @@
 package controllers;
 
-import java.rmi.RemoteException;
+import java.rmi.Naming;
 
 import data.Member;
 import remote.payment.PaymentSessionFacade;
 
 public class PaymentController extends ConexionController{
 
+	private PaymentSessionFacade reServer;
+	
 	public PaymentController(String name) throws Exception {
-		super(name);
+		super();
+		reServer= (PaymentSessionFacade) Naming.lookup(name);
 	
 	}
 
-	public double checkAmount(String name) {
-		try {
-			return ((PaymentSessionFacade) reServer).currentAmount(name);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return 0;
+	public double checkAmount(String m) {
+		return reServer.currentAmount(m);
 	}
 
 }

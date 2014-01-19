@@ -6,6 +6,7 @@ import remote.SongPlayer;
 import controllers.MemberController;
 import controllers.PaymentController;
 import controllers.SongController;
+import data.Member;
 import data.dto.SongDTO;
 
 public class TralalaClient {
@@ -20,6 +21,7 @@ public class TralalaClient {
 			paymentController = new PaymentController(paymentContName);
 			memberController = new MemberController(memberContName);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -28,22 +30,18 @@ public class TralalaClient {
 		return songController.getListSongs();
 	}
 	
-	public SongDTO askSong(String name, String nick) {
-		return songController.askSong(name, nick);
+	public SongDTO askSong(String name) {
+		return songController.askSong(name);
 	}
 	
-	public void checkAmount(String username) {
-		paymentController.checkAmount(username);
+	public void checkAmount(Member m) {
+		paymentController.checkAmount(m);
 	}
 	
 	public boolean signIn(String user, String pass) {
 		return memberController.signIn(user, pass);
 	}
 
-	public boolean createUser(String user, String pass) {
-		return memberController.createUser(user, pass);
-	}
-	
 	public void playSong(SongDTO song) {
 			songPlayer.stopSong();
 			songPlayer.setSong(song);

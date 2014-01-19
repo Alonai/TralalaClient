@@ -1,32 +1,20 @@
 package controllers;
 
-import java.rmi.RemoteException;
+import java.rmi.Naming;
 
 import remote.ManagementSessionFacade;
 
 public class MemberController extends ConexionController{
 
+	ManagementSessionFacade reServer;
 	public MemberController(String name) throws Exception {
-		super(name);
+		super();
+		reServer= (ManagementSessionFacade) Naming.lookup(name);
 	}
 
 	public boolean signIn(String user, String pass) {
-		try {
-			return ((ManagementSessionFacade) reServer).signIn(user, pass);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
+		return reServer.signIn(user, pass);
 	}
+
 	
-	public boolean createUser(String user, String pass) {
-		try {
-			return ((ManagementSessionFacade) reServer).registerUser(user, pass);
-		} catch (RemoteException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
-	}
 }

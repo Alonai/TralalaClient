@@ -5,8 +5,6 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import gui.TralalaClient;
-
 public class SongPlayerGUI extends JFrame {
 
 	/**
@@ -18,7 +16,6 @@ public class SongPlayerGUI extends JFrame {
 	private int deviceWidth = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
 	private int deviceHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 	
-	protected String username;
 	protected TralalaClient client;
 	
 	public SongPlayerGUI(String songContName, String paymentContName, String memberContName) {
