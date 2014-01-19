@@ -1,5 +1,6 @@
 package controllers;
 
+import java.rmi.Naming;
 import java.util.ArrayList;
 
 import data.dto.SongDTO;
@@ -7,15 +8,17 @@ import remote.SongSessionFacade;
 
 public class SongController extends ConexionController{
 
+	SongSessionFacade reServer;
+	
 	public SongController(String name) throws Exception {
-		super(name);
-		
+		super();
+		reServer= (SongSessionFacade) Naming.lookup(name);
 	}
 
 	public SongDTO askSong(String name) {
-		return ((SongSessionFacade)reServer).downloadSong(name);
+		return reServer.downloadSong(name);
 	}
 	public ArrayList<String> getListSongs(){
-		return ((SongSessionFacade)reServer).getListSongs();
+		return reServer.getListSongs();
 	}
 }
