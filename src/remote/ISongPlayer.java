@@ -1,6 +1,6 @@
 package remote;
 
-import data.Song;
+import data.SongDTO;
 
 public interface ISongPlayer {
 	
@@ -12,9 +12,9 @@ public interface ISongPlayer {
 	
 	public void stopSong();
 	
-	public void setSong(Song song);
+	public void setSong(SongDTO song);
 	
-	public Song getSong();
+	public SongDTO getSong();
 	
 	public void getListSongs();
 	

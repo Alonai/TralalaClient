@@ -1,6 +1,7 @@
 package controllers;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import data.dto.SongDTO;
@@ -19,6 +20,10 @@ public class SongController extends ConexionController{
 		return reServer.downloadSong(name);
 	}
 	public ArrayList<String> getListSongs(){
-		return reServer.getListSongs();
+		try {
+			return reServer.getListSongs();
+		} catch (RemoteException e) {
+			return null;
+		}
 	}
 }

@@ -1,7 +1,6 @@
 package data;
 
 import java.io.Serializable;
-import data.Song;
 
 public class SongDTO implements Serializable{
 
@@ -10,14 +9,6 @@ public class SongDTO implements Serializable{
 	private int duration;
 	private double ppp;
 	private String artistName;
-	
-	protected SongDTO(Song song){
-		id=song.getId();
-		title=song.getTitle();
-		duration=song.getDuration();
-		ppp=song.getPpp();
-		artistName=song.getArtist().getName();
-	}
 
 	public String getId() {
 		return id;

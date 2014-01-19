@@ -1,8 +1,7 @@
 package controllers;
 
 import java.rmi.Naming;
-
-import data.Member;
+import java.rmi.RemoteException;
 import remote.payment.PaymentSessionFacade;
 
 public class PaymentController extends ConexionController{
@@ -16,7 +15,11 @@ public class PaymentController extends ConexionController{
 	}
 
 	public double checkAmount(String m) {
-		return reServer.currentAmount(m);
+		try {
+			return reServer.currentAmount(m);
+		} catch (RemoteException e) {
+			return 0;
+		}
 	}
 
 }

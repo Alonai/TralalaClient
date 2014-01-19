@@ -1,6 +1,7 @@
 package controllers;
 
 import java.rmi.Naming;
+import java.rmi.RemoteException;
 
 import remote.ManagementSessionFacade;
 
@@ -13,7 +14,11 @@ public class MemberController extends ConexionController{
 	}
 
 	public boolean signIn(String user, String pass) {
-		return reServer.signIn(user, pass);
+		try {
+			return reServer.signIn(user, pass);
+		} catch (RemoteException e) {
+			return false;
+		}
 	}
 
 	
