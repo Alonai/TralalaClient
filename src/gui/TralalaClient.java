@@ -34,7 +34,7 @@ public class TralalaClient {
 		return songController.askSong(name);
 	}
 	
-	public void checkAmount(Member m) {
+	public void checkAmount(String m) {
 		paymentController.checkAmount(m);
 	}
 	
