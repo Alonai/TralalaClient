@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -62,12 +61,14 @@ public class LoginPanel extends JPanel {
 		
 		validateb.addActionListener(new ActionListener() {
 			
+			@SuppressWarnings("deprecation")
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				/* TODO hey model give me your validate method and I'll use you.
 				 * if access is granted by the model adds the song player to the
 				 * frame and disposes current panel*/
 				if(LoginPanel.this.parent.getClient().signIn(usernametf.getText(), passwordpf.getText())) {
+					LoginPanel.this.parent.username = usernametf.getText();
 					LoginPanel.this.parent.remove(LoginPanel.this);
 					LoginPanel.this.setVisible(false);
 					LoginPanel.this.parent.getContentPane().add(new SongPlayerPanel(LoginPanel.this.parent));

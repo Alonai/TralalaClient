@@ -29,8 +29,8 @@ public class TralalaClient {
 		return songController.getListSongs();
 	}
 	
-	public SongDTO askSong(String name) {
-		return songController.askSong(name);
+	public SongDTO askSong(String name, String nick) {
+		return songController.askSong(name, nick);
 	}
 	
 	public void checkAmount(String m) {

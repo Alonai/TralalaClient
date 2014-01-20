@@ -17,6 +17,7 @@ public class SongPlayerGUI extends JFrame {
 	private int deviceHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 	
 	protected TralalaClient client;
+	protected String username;
 	
 	public SongPlayerGUI(String songContName, String paymentContName, String memberContName) {
 		super("Tralala Cient");
