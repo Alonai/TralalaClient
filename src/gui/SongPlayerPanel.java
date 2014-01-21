@@ -55,7 +55,8 @@ public class SongPlayerPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				/* TODO Ask model for the play method and display the song that is being played*/
 				if(songTable.getSelectedRow() != -1) {
-					SongDTO song = SongPlayerPanel.this.parent.client.askSong(object[songTable.getSelectedRow()][0].split(" ")[0], SongPlayerPanel.this.parent.username);
+					System.out.println(object[songTable.getSelectedRow()][0].split("-")[0].trim());
+					SongDTO song = SongPlayerPanel.this.parent.client.askSong(object[songTable.getSelectedRow()][0].split("-")[0].trim(), SongPlayerPanel.this.parent.username);
 					SongPlayerPanel.this.parent.client.playSong(song);
 					JOptionPane.showMessageDialog(SongPlayerPanel.this, song.getArtistName() + " - " + song.getTitle() + " is being played.", 
 							"Player Notification", JOptionPane.OK_OPTION);
