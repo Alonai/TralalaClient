@@ -78,7 +78,7 @@ public class LoginPanel extends JPanel {
 					/* TODO if access is denied shows a dialog with an error*/
 					usernametf.setText("");
 					passwordpf.setText("");
-					JOptionPane.showMessageDialog(LoginPanel.this, "The username or the password is incorrect.", "Access denied", JOptionPane.ERROR_MESSAGE);
+					JOptionPane.showMessageDialog(LoginPanel.this, "The username or the password are incorrect.", "Access denied", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
