@@ -39,7 +39,7 @@ public class SongPlayerPanel extends JPanel {
 		panel.setLayout(new BorderLayout());
 		panel.setBounds(0, 0, 200, 600);
 		
-		JScrollPane scrollpane = new JScrollPane(songTable);
+		JScrollPane scrollpane = new JScrollPane(songTable, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scrollpane.setBounds(0, 0, 200, 600);
 		
 		panel.add(scrollpane);
