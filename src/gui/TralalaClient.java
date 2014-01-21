@@ -19,6 +19,7 @@ public class TralalaClient {
 			songController  = new SongController(songContName);
 			paymentController = new PaymentController(paymentContName);
 			memberController = new MemberController(memberContName);
+			songPlayer = new SongPlayer(songController);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -41,7 +42,7 @@ public class TralalaClient {
 		return memberController.signIn(user, pass);
 	}
 
-	public void playSong(SongDTO song) {
+	public void playSong(SongDTO song) {	
 			songPlayer.stopSong();
 			songPlayer.setSong(song);
 			songPlayer.playSong();
