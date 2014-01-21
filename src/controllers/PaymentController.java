@@ -2,15 +2,17 @@ package controllers;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+
+import remote.payment.IPaymentSessionFacade;
 import remote.payment.PaymentSessionFacade;
 
 public class PaymentController extends ConexionController{
 
-	private PaymentSessionFacade reServer;
+	private IPaymentSessionFacade reServer;
 	
 	public PaymentController(String name) throws Exception {
 		super();
-		reServer= (PaymentSessionFacade) Naming.lookup(name);
+		reServer= (IPaymentSessionFacade) Naming.lookup(name);
 	
 	}
 

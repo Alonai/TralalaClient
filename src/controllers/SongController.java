@@ -5,15 +5,16 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 import data.dto.SongDTO;
+import remote.ISongSessionFacade;
 import remote.SongSessionFacade;
 
 public class SongController extends ConexionController{
 
-	SongSessionFacade reServer;
+	ISongSessionFacade reServer;
 	
 	public SongController(String name) throws Exception {
 		super();
-		reServer= (SongSessionFacade) Naming.lookup(name);
+		reServer= (ISongSessionFacade) Naming.lookup(name);
 	}
 
 	public SongDTO askSong(String name, String nick) {
