@@ -21,6 +21,16 @@ public class MemberController extends ConexionController{
 			return false;
 		}
 	}
+	
+	public boolean createUser(String name, String pass) {
+		try {
+			return reServer.registerUser(name, pass);
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	
 }

@@ -65,4 +65,8 @@ public class TralalaClient {
 		}
 	}
 	
+	public void createUser(String name, String pass) {
+		memberController.createUser(name, pass);
+	}
+	
 }
